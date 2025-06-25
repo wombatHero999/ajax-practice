@@ -10,11 +10,8 @@ tmp/
 *.swp
 *~.nib
 local.properties
-.settings/
 .loadpath
 .recommenders
-.classpath
-.project
 /target/
 *.properties
 *.log
@@ -87,7 +84,6 @@ org.eclipse.*
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
