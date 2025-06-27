@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!-- 게시글 목록 페이지 -->
 <h2>일반게시판</h2>
 <table class='list-table'>
@@ -13,7 +15,15 @@
 	</thead>
 	<tbody>
 		<!-- 반복문으로 등록된 게시글들를 출력하는곳입니다. -->
-		
+		<c:forEach var="board" items="${list}">
+			<tr>
+				<td>${board.no }</td>
+				<td>${board.title }</td>
+				<td>${board.nickname }</td>
+				<td><fmt:formatDate value="${board.createDate }"
+				pattern="yyyy-MM-dd"/></td>
+			</tr>
+		</c:forEach>
 	</tbody>
 </table>
 
