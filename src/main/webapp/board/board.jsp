@@ -37,6 +37,35 @@
 				});
 			});
 		});
+		
+		function displayData(boardNo){
+			$.ajax({
+				url : "${pageContext.request.contextPath}/board/view",
+				data : {
+					boardNo : boardNo
+				},
+				success : function(data){
+					$(".outer").html(data);
+				},
+				error : function(err){
+					console.log(err);
+				}
+				
+			})
+		}
+		
+		$("#insert").click(function(){
+			$.ajax({
+				url : "/ajax/board/insert",
+				success : function(data){
+					$(".outer").html(data);
+				},
+				error : function(err){
+					console.log(err);	
+				}				
+			})
+		})
+		
 	
 	</script>
 	

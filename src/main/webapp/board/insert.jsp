@@ -22,4 +22,38 @@
 		</th>
 	</tr>
 </table>
+<script>
+	$(function(){
+		$("#btn").click(function(){
+			$.ajax({
+				url : '/ajax/board/insert',
+				method:"post",
+				data : {
+					title : $("[name=title]").val() , 
+					content : $("[name=content]").val() , 
+					nickname : $("[name=nickname]").val() , 
+				}, 
+				success : function(data){
+					// 1. 등록 성공 메세지
+					alert(data);
+					
+					// 2. list조회
+					$("#list").click();
+				},
+				error : function(err){
+					console.log(err);
+				}
+			})
+		});
+	});
+</script>
+
+
+
+
+
+
+
+
+
 
